@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
         frutas.add(new Fruta("Manzana", R.drawable.manzana));
         frutas.add(new Fruta("Naranja", R.drawable.naranja));
         frutas.add(new Fruta("Platano", R.drawable.platano));
+        frutas.add(new Fruta("Sandia", R.drawable.sandia));
+        frutas.add(new Fruta("Uvas", R.drawable.uvas));
+        frutas.add(new Fruta("Kiwi", R.drawable.kiwi));
+        frutas.add(new Fruta("Piña", R.drawable.pina));
 
         AdaptadorFrutas adapter = new AdaptadorFrutas(this, frutas);
         ListView listView = findViewById(R.id.listView);
