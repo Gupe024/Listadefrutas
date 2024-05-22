@@ -1,6 +1,6 @@
 package com.example.listfrutasapp;
 
-import android.content.Context;
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,34 +10,42 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import java.util.ArrayList;
-import java.util.List;
+public class AdaptadorFrutas extends ArrayAdapter<String> {
+    private final Activity context;
+    private final String[] nombres;
+    private final String[] precios;
+    private final String[] descripciones;
+    private final Integer[] image;
 
-public class AdaptadorFrutas extends ArrayAdapter<Fruta> {
-    Context contexto;
-    ArrayList<Fruta> listaFrutas;
-
-    public AdaptadorFrutas(Context context, ArrayList<Fruta> frutas) {
-        super(context, 0, frutas);
-        contexto = context;
-        listaFrutas = frutas;
-
+    public AdaptadorFrutas(@NonNull Activity context, String[] nombres, String[] precios, String[] descripciones, Integer[] image) {
+        super(context, R.layout.item, nombres);
+        this.context = context;
+        this.nombres = nombres;
+        this.precios = precios;
+        this.descripciones = descripciones;
+        this.image = image;
     }
 
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View vista = convertView;
-        if(vista == null) {
-            vista = LayoutInflater.from(contexto).inflate(R.layout.listadefrutas, parent, false);
+    @NonNull
+    @Override
+    public View getView(int position, @NonNull View convertView, @NonNull ViewGroup parent) {
+        if (convertView == null) {
+            LayoutInflater inflater = context.getLayoutInflater();
+            convertView = inflater.inflate(R.layout.item, parent, false);
         }
-        Fruta frutaactual = listaFrutas.get(position);
+        TextView nombre = convertView.findViewById(R.id.nombre);
+        TextView precio = convertView.findViewById(R.id.precio);
+        TextView descripcion = convertView.findViewById(R.id.descripcion);
+        ImageView imagen = convertView.findViewById(R.id.logo);
 
-        ImageView imagenFruta = vista.findViewById(R.id.imagenFrutas);
-        imagenFruta.setImageResource(frutaactual.getImagen());
+        nombre.setText(nombres[position]);
+        precio.setText(precios[position]);
+        descripcion.setText(descripciones[position]);
+        imagen.setImageResource(image[position]);
 
-        TextView nombreFruta = vista.findViewById(R.id.nombreFruta);
-        nombreFruta.setText(frutaactual.getNombre());
-
-        return vista;
+        return convertView;
     }
 }
+
+
 

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ListfrutasApp</string>
+    <string name="nombre" />
+    <string name="precio" />
 </resources>
