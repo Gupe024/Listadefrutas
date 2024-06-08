@@ -8,7 +8,8 @@
         android:id="@+id/logo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginRight="16dp"/> <!-- Agregar margen a la derecha para separar la imagen de los textos -->
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -28,7 +29,9 @@
             <TextView
                 android:id="@+id/nombre"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"/> <!-- Agregar margen a la izquierda para separar el texto del borde izquierdo -->
+
         </LinearLayout>
 
         <LinearLayout
@@ -44,7 +47,8 @@
             <TextView
                 android:id="@+id/precio"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"/> <!-- Agregar margen a la izquierda para separar el texto del borde izquierdo -->
 
         </LinearLayout>
 
@@ -56,12 +60,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""/>
+                android:text="@string/descripcion"/>
 
             <TextView
                 android:id="@+id/descripcion"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"/> <!-- Agregar margen a la izquierda para separar el texto del borde izquierdo -->
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
+

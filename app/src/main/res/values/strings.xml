@@ -1,5 +1,46 @@
 <resources>
-    <string name="app_name">ListfrutasApp</string>
-    <string name="nombre" />
+    <string name="app_name" />
+    <string name="total">Total: $0.00</string>
     <string name="precio" />
+    <string name="nombre" />
+    <string name="descripcion" />
+    <string-array name="nombre_frutas">
+        <item>Manzana</item>
+        <item>Naranja</item>
+        <item>Platano</item>
+        <item>Kiwi</item>
+        <item>Piña</item>
+        <item>Sandía</item>
+        <item>Uvas</item>
+    </string-array>
+
+    <string-array name="precios_frutas">
+        <item>20</item>
+        <item>30</item>
+        <item>15</item>
+        <item>25</item>
+        <item>35</item>
+        <item>15</item>
+        <item>26</item>
+    </string-array>
+
+    <string-array name="descripción_frutas">
+        <item>Manzana deliciosa y jugosa.</item>
+        <item>Naranja rica en vitamina C.</item>
+        <item>Platano nutritivo y energético.</item>
+        <item>Kiwi exótico y refrescante.</item>
+        <item>Piña dulce y tropical.</item>
+        <item>Sandía refrescante y sabrosa.</item>
+        <item>Uvas pequeñas y dulces.</item>
+    </string-array>
+
+    <array name="imagenes_frutas">
+        <item>@drawable/manzana</item>
+        <item>@drawable/naranja</item>
+        <item>@drawable/platano</item>
+        <item>@drawable/kiwi</item>
+        <item>@drawable/pina</item>
+        <item>@drawable/sandia</item>
+        <item>@drawable/uvas</item>
+    </array>
 </resources>

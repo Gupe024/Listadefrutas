@@ -1,5 +1,6 @@
 package com.example.listfrutasapp;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,18 +24,17 @@ public class MainActivity extends AppCompatActivity {
 
         lista = findViewById(R.id.listView);
         totalTextView = findViewById(R.id.total);
-        String[] nombres = {"Manzana", "Naranja", "Platano", "Kiwi", "Piña", "Sandía", "Uvas"};
-        String[] precios = {"20", "30", "15", "25", "35", "15", "26"};
-        String[] descripciones = {
-                "Manzana deliciosa y jugosa.",
-                "Naranja rica en vitamina C.",
-                "Platano nutritivo y energético.",
-                "Kiwi exótico y refrescante.",
-                "Piña dulce y tropical.",
-                "Sandía refrescante y sabrosa.",
-                "Uvas pequeñas y dulces."
-        };
-        Integer[] image = {R.drawable.manzana, R.drawable.naranja, R.drawable.platano, R.drawable.kiwi, R.drawable.pina, R.drawable.sandia, R.drawable.uvas};
+
+        String[] nombres = getResources().getStringArray(R.array.nombre_frutas);
+        String[] precios = getResources().getStringArray(R.array.precios_frutas);
+        String[] descripciones = getResources().getStringArray(R.array.descripción_frutas);
+
+        TypedArray images = getResources().obtainTypedArray(R.array.imagenes_frutas);
+        Integer[] image = new Integer[images.length()];
+        for (int i = 0; i < images.length(); i++) {
+            image[i] = images.getResourceId(i, -1);
+        }
+        images.recycle();
 
         AdaptadorFrutas adapter = new AdaptadorFrutas(this, nombres, precios, descripciones, image);
         lista.setAdapter(adapter);
@@ -65,3 +65,4 @@ public class MainActivity extends AppCompatActivity {
         totalTextView.setText(String.format("Total: $%.2f", total));
     }
 }
+
